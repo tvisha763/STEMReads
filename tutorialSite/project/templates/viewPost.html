@@ -1,0 +1,119 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/viewPost.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway|Nanum+Myeongjo|Newsreader|Ysabeau+Office:wght@100&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>tutorialSite {{post.title}}</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items: center">
+    
+    <div class="container" style="margin: 0px; margin-right: 0px; position:absolute; top:0px; right:0px; bottom:0px; left:0px;">
+    <!-- <img src="{{post.image.url}}"> -->
+    <center>
+        <nav style = "display: flex; align-items: center; margin-left: 80px;" class="navbar navbar-default navbar-fixed-top navbar-expand-lg" id="nav">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="color:#3d3548;" href="{% url 'dashboard' %}">STEM Reads</a>
+          <button style="color:#3d3548;"  class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span style="color:#3d3548;"  class="navbar-toggler-icon"></span>
+          </button>
+          <div style="color:#3d3548;"  class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              {% if status == 2 %}
+              <li class="nav-item">
+                <a class="nav-link active" style="color:#3d3548;" aria-current="page" href="{% url 'write-post' %}">Write Post</a>
+              </li>
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link active" style="color:#3d3548;" aria-current="page" href="{% url 'staff' %}">Staff</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" style="color:#3d3548;" aria-current="page" href="{% url 'request' %}">Request</a>
+              </li>
+            </ul>
+            <form action="{% url 'search' %}" class="d-flex" role="search" style="display: flex; justify-self: end; width: 300px;" method="POST">
+              {% csrf_token %}
+              <input class="form-control me-2" name = "search" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-info" type="submit" style="color: #ffffff;">Search</button>
+            </form>
+            <a class="btn btn-outline-light" style="margin-left: 20px; margin-right: 20px; width: 80px;" href="{% url 'logout' %}" role="button">Log Out</a>
+
+          </div>
+        </div>
+      </nav>
+    </center>
+
+   <div class="post">
+    <div class="jumbotron-peer jumbotron-fluid" style="background-image: url('{{post.image.url}}');">
+        
+            
+    </div>
+    <br>
+    <h1>{{post.title}}</h1>
+    <h6>{{post.author}}</h6>
+    <br>
+    <br>
+    <div class="vid">
+        {{post.video_embed | safe}}
+    </div>
+    
+    <br>
+    <br>
+    <div class="text">
+        <md-block>
+            {{post.text}}
+        </md-block>
+    </div>
+
+    <br>
+    <br>
+    </div>
+    <br>
+    <br>
+    <div class="commentsection">
+    <h1 class="commentTitle">Comments</h1>
+    <div class="write">
+        <form class="message-write" action="{% url 'comment' post.id %}" method="post">
+            {% csrf_token %}
+            <!-- <input type="hidden"  value="{{book_looked_up.id}}" name="bookToComment" id="bookToComment"> -->
+            <textarea style="display: inline-block; vertical-align: middle; margin: 20px; width: 30rem;" class="form-control" type="text" placeholder="Type your message here" name="message"></textarea>
+            <button style="display: inline-block;" class="btn btn-dark" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+              </svg></button>
+        </form>
+    </div>
+    
+    <div class="comments" style="color: #474747;">
+        
+        {% for c in comments %}
+        <div class="comment">
+        <strong>
+            {{ c.user.username }} - 
+            {{ c.date }}
+        </strong>
+        <br/>
+        
+        {{ c.message }}
+        <br/>
+        <br/>
+        <hr>
+        </div>
+                    
+        {% endfor %}
+    </div>
+</div>
+''
+</div>
+</div>
+
+
+</div>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+</body>
+</html>

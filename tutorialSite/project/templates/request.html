@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/request3.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway|Nanum+Myeongjo|Ysabeau+Office:wght@100&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Request</title>
+</head>
+<body>
+    <div class="request">
+        <div class="form">
+            <center>
+            <form action="{% url 'request' %}" method="POST" enctype='multipart/form-data'>
+                {% csrf_token %}
+                <input type="text" style="margin-bottom: 20px; padding: 5px;" placeholder="title" name="title">
+                <textarea class="text" style="margin-bottom: 20px; padding: 5px;" name="request" placeholder="request"></textarea>
+                <button style="margin: 20px; padding-right: 30px; padding-left:30px; padding-top:10px; padding-bottom:10px;" type="submit" class="btn btn-outline-light">submit</button>
+            </form>
+            </center>
+        </div>
+    </div>
+</body>
+</html>

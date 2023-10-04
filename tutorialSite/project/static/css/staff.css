@@ -1,0 +1,85 @@
+@import "bootstrap";
+
+
+html, body{
+    margin: 0px;
+    overflow: hidden;
+}
+
+
+
+.staff{
+    z-index: 1;
+    margin-top: -55px;
+    /* margin-bottom: -30px; */
+    background-size: cover;
+    position: absolute;
+    
+    height: 100vh;
+    width: 100%;
+    background-image: url('../assets/staff.png');
+    
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background-attachment: fixed;
+    overflow-y: auto;
+}
+
+.img{
+    border-radius: 180px;
+    height: 300px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+.text{
+    color: antiquewhite;
+    width: 500px;
+    margin: 50px;
+}
+
+.staffMember{
+    display: flex;
+    align-items: center;
+    width: 1000px;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+
+#nav{
+    display: flex;
+    z-index:1000000;
+    height: 55px;
+    width: 100%;
+    /* background-color: black;
+    opacity: 0.6;
+    filter:(opacity=60); */
+    color: #E7DDF6;
+    display: block;
+    top: 0;
+    left: 0;
+    right:0;
+
+
+}
+
+form{
+    opacity: 1.00;
+}
+
+.nav-item{
+    opacity: 1.00;
+    color: #E7DDF6;
+}
+
+.navbar-default{
+    transition:500ms ease;
+    background:transparent;
+}
+.navbar-default.scrolled{
+    background:#000;
+}

@@ -1,0 +1,132 @@
+html, body{
+    margin: 0px;
+    background-color: rgb(207, 179, 241);    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(207, 179, 241);
+}
+
+.container{
+    padding:60px;
+    padding-bottom:60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(207, 179, 241);
+
+}
+/* body{
+    background-color: black;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+} */
+
+.post{
+    display: flex;
+    width: 900px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    border-radius: 20px;
+    border-color: black;
+    padding: 0px;
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 60px;
+    margin-left: 130px;
+    color: #fffcee;
+
+}
+
+h1{
+    font-family: "Newsreader";
+}
+
+.text{
+    display: block;
+    width: 700px;
+
+}
+
+.jumbotron-fluid{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 350px;
+    width: 900px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.vid{
+    width: 800px;
+}
+
+.comments{
+    color: #474747;
+    width: 900px;
+    justify-content: center;
+    padding: 40px;
+    height: 400px;
+    overflow-y: scroll;
+
+}
+
+.comment{
+    padding: 20px;
+    
+}
+
+.commentsection{
+    display: flex;
+    width: 900px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    border-radius: 20px;
+    border-color: black;
+    padding: 20px;
+    margin-bottom: 60px;
+    margin-left: 130px;
+    background-color: antiquewhite;
+}
+
+.commentTitle{
+    color: #474747;
+}
+
+
+
+.container #nav{
+    display: flex;
+    height: 55px;
+    width: 100%;
+    /* background-color: black;
+    opacity: 0.6;
+    filter:(opacity=60); */
+    color: #E7DDF6;
+    display: block;
+    top: 0;
+    left: 0;
+    right:0;
+
+
+}
+
+.container #nav form{
+    opacity: 1.00;
+}
+
+.container #nav .nav-item{
+    opacity: 1.00;
+    color: #E7DDF6;
+}
+
+

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home3.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway|Nanum+Myeongjo|Ysabeau+Office:wght@100&display=swap">
+
+    <title>Home</title>
+</head>
+<body>
+    <!-- Navbar (sit on top) -->
+<div style=" height: 55px; padding-bottom: 50px;" class="w3-top">
+    <div style=" height: 55px;  padding: 10px; padding-bottom: 30px; color: azure; font-family: Raleway;" class="w3-bar " id="myNavbar">
+      <a href="{% url 'home' %}" class="w3-bar-item w3-wide">STEM Reads</a>
+      <!-- Right-sided navbar links -->
+      <div class="w3-right ">
+        <a href="{% url 'home' %}" class="w3-bar-item ">Home</a>
+        <a href="{% url 'login' %}" class="w3-bar-item "> Login</a>
+        <a href="{% url 'signup' %}" class="w3-bar-item "> Signup</a>
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+  
+    </div>
+  </div>
+  
+    <div class="home">
+        <br>
+        <br>
+        <br>
+        <div>
+          <p>        </p>
+          <br>
+          <br>
+          <br>
+          <p>           </p>
+        </div>
+        <h1 style="  font-family: Nanum Myeongjo;   font-size: 5rem;      color: #ffffff;   z-index: 100000;  "> <strong> STEM Reads </strong> 
+        <center><a class="button" href="{% url 'login' %}">Log in to Read</a></center>
+    </div>
+</body>
+</html>

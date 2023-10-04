@@ -1,0 +1,39 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/writePost4.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway|Nanum+Myeongjo|Ysabeau+Office:wght@100&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>write a post</title>
+</head>
+<body>
+    
+    <div class="writePost" >
+        
+        <div class="form">
+            <center>
+            <form action="{% url 'write-post' %}" method="POST" enctype='multipart/form-data'>
+                {% csrf_token %}
+                <input type="text" style="margin-bottom: 20px; padding: 5px;" placeholder="title" name="title">
+                <input type="text" style="margin-bottom: 20px; padding: 5px;" placeholder="author" name="author">
+                <input type="file" id="file" class="file" style="margin-bottom: 20px; padding: 5px; color:aliceblue;" accept="image/*" name="image">
+                <label for="file"class="btn btn-outline-light" style = "margin-bottom: 25px;">image: select file</label>
+                <textarea class="embed" style="margin-bottom: 20px; padding: 5px;" placeholder="video embed code" name="video"></textarea>
+                <textarea class="text" style="margin-bottom: 20px; padding: 5px;" name="text" placeholder="Text (format in markdown please!)"></textarea>
+                <button style="margin: 20px; padding-right: 30px; padding-left:30px; padding-top:10px; padding-bottom:10px;" type="submit" class="btn btn-outline-light">submit</button>
+            </form>
+            </center>
+        </div>  
+    </div>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+</body>
+</html>
